@@ -10,7 +10,7 @@ Later, I will add some beatifull description with text and photos.
 TODO
 1) How many, and who in chat
 2) Writing text
-3) 
+3) Connection/Disconnection user
 
 
 See you later))
