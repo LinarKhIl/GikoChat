@@ -27,8 +27,11 @@ io.on('connection', function(socket)
 
 		socket.on('disconnecting', function()
 			{
-				io.emit('chat message', document.cookie + ' disconnected');
 			});
+		socket.on('chat message', function(msg)
+		{
+			io.emit('chat message', user_name + ': ' + msg);
+		});
 
 
 	});
@@ -37,8 +40,7 @@ io.on('connection', function(socket)
 app.post('/', function(req, res) 
 	{
 		console.log(req.body.firstname + ' connected to chat');
-		console.log('Cookies: ', req)
-		user_list.push(req.body.fistname)
+		user_name = req.body.firstname;
 		res.sendFile(__dirname + '/views/chat.html')
 	})
 
